@@ -23,19 +23,20 @@ namespace WebApp_Scheduler.Controllers
                 throw new Exception("Program id was not passed. can't generate excel without program details.");
             }
             int proId = (int)programId;
-            Table table = new Table();
-            List<string> columns = Table.GetColumNames();
-            table.ColumNames = columns;
+            //Table table = new Table();
+            //List<string> columns = Table.GetColumNames();
+            //table.ColumNames = columns;
 
-            List<string> data = table.GetDataFromDatabaseCourses(db, proId);
-            table.Data = data;
-            table.Program = db.Programs.Find(programId);
-            bool saved = table.WriteTableToFile(table);
-            if (saved == true)
-            {
-                return RedirectToAction("Index", "Courses", new { IdOfProgram = proId });
-            }
-            return View();
+            //List<string> data = table.GetDataFromDatabaseCourses(db, proId);
+            //table.Data = data;
+            //table.Program = db.Programs.Find(programId);
+            //bool saved = table.WriteTableToFile(table);
+            //if (saved == true)
+            //{
+            //}
+            return RedirectToAction("Index", "Courses", new { IdOfProgram = proId });
+
+//            return View();
         }
 
         protected override void Dispose(bool disposing)
